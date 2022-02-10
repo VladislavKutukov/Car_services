@@ -49,7 +49,7 @@ class UserController{
     async check(req, res,next){
         const {id}=req.query
         if(!id){
-            next(ApiErorr.badRequest('nНе заадн ID'))
+            next(ApiErorr.badRequest('Не заадн ID'))
         }
         res.json(id);
     }
