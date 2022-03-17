@@ -18,8 +18,7 @@ class DeviceController{
         catch(e){
             next(ApiErorr.badRequest(e.message))
         }
-
-        
+                
     }   
 
     async getAll (req, res){
