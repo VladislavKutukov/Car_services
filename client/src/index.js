@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import DeviceStore from './store/DeviceStore';
+import UserStore from './store/UserStore';
 // const express = require ('express')
 // const sequelize = require ('./db.js')
 
@@ -14,10 +16,16 @@ import App from './App';
 //     console.log(e)
 //   }
 // }
+console.log(process.env.REACT_APP_API_URL)
+export const Context = createContext(null)
 
 ReactDOM.render(
-
-    <App />,
+  <Context.Provider value={{
+    user: new UserStore(),
+    device: new DeviceStore(),
+  }}>
+    <App />
+    </Context.Provider>,
   document.getElementById('root')
   
 );

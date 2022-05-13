@@ -17,7 +17,7 @@ app.use(express.static(patch.resolve(__dirname,'static')))
 app.use(fileUpload({}))
 app.use('/api',router)
 
-//Обработка ошибок, последнией middleware
+//Обработка ошибок (последнией middleware)
 app.use(errorHandler)
 
 const start = async () =>{
@@ -30,5 +30,6 @@ const start = async () =>{
         console.log(e)
     }
 }
+
 start()
 
